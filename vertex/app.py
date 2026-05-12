@@ -153,7 +153,7 @@ class AA:
 			if not A._queue.empty():B=A._queue.get();A._accepted_hash=B[A0];A._ws.send(B[A1])
 			else:F.sleep(.25)
 	def on_open(A,ws):
-		G={J:b,K:b,L:['Anomin/1.0']};ws.send(C.dumps(G)+N);B=f.Thread(target=A.queue_message);B.daemon=I;B.start()
+		G={J:b,K:b,L:['Anomin/2.0']};ws.send(C.dumps(G)+N);B=f.Thread(target=A.queue_message);B.daemon=I;B.start()
 		def H(shared,hashrate):D='ascii';B=shared;E={J:c,K:c,L:[A.username,B[Z],B['extranonce2'].decode(D),B[a],B['nonce'].decode(D)]};A._queue.put({A1:C.dumps(E)+N,A0:hashrate})
 		for D in X(A.threads):M=D*A._subscription._max_nonce//A.threads;O=(D+1)*A._subscription._max_nonce//A.threads-1;P=S.Process(target=A.run,args=(A.job_manager,M,O,H),daemon=I);P.start()
 	def handle_message(A,ws,message):
